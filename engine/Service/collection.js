@@ -1,4 +1,5 @@
 import { Touchable } from 'react-native'
+import theme from './../Constants/theme'
 
 // touch统计
 export function hookTouch (callback) {
@@ -30,7 +31,11 @@ export function hookTouch (callback) {
     })(this)
     callback({
       type: 'click',
-      identify: identify.join('|')
+      extraInfo: {
+        x: (e.nativeEvent.pageX * (375 / theme.screenWidth)).toFixed(1) * 1, // x坐标
+        y: ((e.nativeEvent.pageY) * (375 / theme.screenWidth)).toFixed(1) * 1, // y坐标
+        identify: identify.join('|')
+      }
     })
     originTouchable.call(this, e)
   }
