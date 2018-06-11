@@ -13,6 +13,7 @@ import {
   Heading,
   Paragraph,
   Label,
+  Mask,
   EnhancedBackHandler,
   WithConnection
 } from './../engine/Components'
@@ -34,6 +35,7 @@ export {
   Heading,
   Paragraph,
   Label,
+  Mask,
   px2dp,
   hookTouch,
   hookUrl,

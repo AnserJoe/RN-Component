@@ -18,7 +18,7 @@ export default {
   screenWidth: deviceWidth,
   screenHeight: deviceHeight,
   onePixel: 1 / PixelRatio.get(),
-  themeColor: '#C9AE5A',
+  themeColor: '#DA3762',
   hintColor: '#B44B4B',
   textColor: '#333',
   displayColor: '#999',

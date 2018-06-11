@@ -10,6 +10,7 @@ export default class Mask extends Component {
     touchHide: PropTypes.bool,
     animationInTiming: PropTypes.number,
     animationOutTiming: PropTypes.number,
+    backdropOpacity: PropTypes.number,
     hideCallback: PropTypes.func
   }
   constructor (props) {
@@ -37,12 +38,13 @@ export default class Mask extends Component {
     }
   }
   render () {
-    let {touchHide = true, style, animationInTiming = 300, animationOutTiming = 300} = this.props
+    let {touchHide = true, style, animationInTiming = 300, animationOutTiming = 300, backdropOpacity = 0.5} = this.props
     return (
       <Modal
         isVisible={!this.state.hide}
         onBackdropPress={touchHide ? this.hide : () => null}
         onBackButtonPress={touchHide ? this.hide : () => null}
+        backdropOpacity={backdropOpacity}
         animationIn={'slideInUp'}
         animationOut={'slideOutDown'}
         animationInTiming={animationInTiming}

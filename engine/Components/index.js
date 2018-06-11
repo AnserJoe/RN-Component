@@ -11,6 +11,7 @@ import LabelInput from './LabelInput/LabelInput'
 import RNPicker from './RNPicker/RNPicker'
 import WarpLoading from './WarpLoading/WarpLoading'
 import { Heading, Paragraph, Label } from './base/Text'
+import Mask from './base/Mask'
 
 export {
   CommonList,
@@ -27,6 +28,7 @@ export {
   Heading,
   Paragraph,
   Label,
+  Mask,
   EnhancedBackHandler,
   WithConnection
 }
