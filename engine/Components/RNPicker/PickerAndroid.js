@@ -26,6 +26,14 @@ export default class PickerAndroid extends Component {
     super(props, context)
     this._moveTo = this._moveTo.bind(this)
     this.state = this._stateFromProps(this.props)
+    this._panResponder = PanResponder.create({
+      onMoveShouldSetPanResponder: (evt, gestureState) => true,
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
+      onStartShouldSetPanResponder: (evt, gestureState) => true,
+      onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
+      onPanResponderRelease: this._handlePanResponderRelease.bind(this),
+      onPanResponderMove: this._handlePanResponderMove.bind(this)
+    })
   }
 
   componentDidUpdate(nextProp) {
@@ -119,14 +127,6 @@ export default class PickerAndroid extends Component {
   }
 
   componentDidMount () {
-    this._panResponder = PanResponder.create({
-      onMoveShouldSetPanResponder: (evt, gestureState) => true,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onStartShouldSetPanResponder: (evt, gestureState) => true,
-      onStartShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onPanResponderRelease: this._handlePanResponderRelease.bind(this),
-      onPanResponderMove: this._handlePanResponderMove.bind(this)
-    })
     this.isMoving = false
     this.index = this.state.selectedIndex
   }
@@ -146,7 +146,7 @@ export default class PickerAndroid extends Component {
         onPress={() => {
           this._moveTo(index)
         }}
-        >
+      >
         {item.label}
       </Paragraph>
 
@@ -161,7 +161,7 @@ export default class PickerAndroid extends Component {
         onPress={() => {
           this._moveTo(index)
         }}
-        >
+      >
         {item.label}
       </Paragraph>
     })

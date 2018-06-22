@@ -1,5 +1,6 @@
 import CommonList from './CommonList/CommonList'
 import Toast from './Toast'
+import Loading from './Loading'
 import Region from './Region/Region'
 import { EnhancedBackHandler, WithConnection } from './enhanced'
 import Touch from './base/Touch'
@@ -17,6 +18,7 @@ export {
   CommonList,
   Region,
   Toast,
+  Loading,
   AlertModel,
   NoData,
   RNPicker,

@@ -56,7 +56,7 @@ export default class Region extends Component {
     cityCallback: PropTypes.func,
     level: PropTypes.number
   }
-  componentDitMount () {
+  componentDidMount () {
     this.setState({
       classA: this.setData(address.province)
     })

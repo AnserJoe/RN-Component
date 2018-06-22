@@ -1,7 +1,7 @@
 import React, {
   Component,
 } from 'react';
-import RootView from './RootView'
+import Root from './../base/Root'
 import ToastView from './ToastView'
 
 /**
@@ -12,13 +12,13 @@ class Toast {
   static show(msg = '', time = 2000, missCallback = () => {}) {
     if (!this.editable) return
     this.editable = false
-    RootView.setView(<ToastView
+    Root.setView(<ToastView
       message={msg}
       time={time}
       onDismiss={() => {
         this.editable = true
         missCallback ()
-        RootView.setView()
+        Root.dismiss()
       }}/>)
   }
 }

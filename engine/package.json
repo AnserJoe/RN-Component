@@ -3,23 +3,10 @@
   "version": "0.0.9",
   "private": false,
   "description": "The common components and utils for react native, it works on iOS and Android.",
-  "main": "src/index.js",
-  "entry": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "keywords": [
-    "react-native",
-    "react-native-assist",
-    "ios",
-    "android"
-  ],
-  "author": "AnserJoe",
-  "license": "MIT",
   "bugs": {
     "email": "anshuozz@163.com"
   },
@@ -33,5 +20,10 @@
     "babel-preset-react-native": "4.0.0",
     "jest": "23.1.0",
     "react-test-renderer": "^16.3.1"
-  }
+  },
+  "keywords": [
+    "react--native-assist"
+  ],
+  "author": "Joe",
+  "license": "MIT"
 }

@@ -11,15 +11,18 @@ import {
   Text,
   View
 } from 'react-native'
-import { Toast } from './../Components'
+import { Loading } from './../Components'
 
-export default class ToastDemo extends Component {
+export default class LoadingDemo extends Component {
   render() {
     return (
       <View style={styles.container}>
         <TouchableOpacity onPress={() => {
-          Toast.show('测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试', 1000, () => console.log('123'))
-        }}><Text>Toast</Text></TouchableOpacity>
+          Loading.show()
+          setTimeout(() => {
+            Loading.dismiss()
+          }, 2000)
+        }}><Text>LoadingDemo</Text></TouchableOpacity>
       </View>
     )
   }

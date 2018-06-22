@@ -31,6 +31,7 @@ export default class CommonList extends React.Component {
       return (
         <SectionList
           {...this.props}
+          ref={'list'}
           sections={source}
           keyExtractor={(item,index)=>("index"+index+item)}
         />
@@ -39,6 +40,7 @@ export default class CommonList extends React.Component {
       return (
         <FlatList
           {...this.props}
+          ref={'list'}
           data={source}
           keyExtractor={(item,index)=>("index"+index+item)}
         />

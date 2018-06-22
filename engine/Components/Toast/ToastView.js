@@ -101,10 +101,12 @@ class ToastView extends Component {
 
 const styles = StyleSheet.create({
   textContainer: {
-    backgroundColor: 'rgba(0,0,0,.6)',
-    borderRadius: 8,
+    backgroundColor: 'rgba(0,0,0,.5)',
+    borderRadius: 20,
     padding: 10,
-    maxWidth: width / 2,
+    paddingLeft: 20,
+    paddingRight: 20,
+    maxWidth: width - 64,
     alignSelf: "flex-end",
   },
   defaultText: {

@@ -1,25 +1,29 @@
 import React, {Component} from "react";
 import {StyleSheet, AppRegistry, View, Text} from 'react-native';
 
-viewRoot = null;
+var self = null;
 
-class RootView extends Component {
+class Root extends Component {
   constructor(props) {
     super(props);
-    viewRoot = this;
+    self = this;
     this.state = {
-      toast: null,
+      view: null,
     }
   }
 
   render() {
     return (<View style={styles.rootView} pointerEvents="box-none">
-      {this.state.toast}
+      {this.state.view}
     </View>)
   }
 
   static setView = (view) => {
-    viewRoot.setState({toast: view})
+    self.setState({view: view})
+  };
+
+  static dismiss = () => {
+    self.setState({view: null})
   };
 }
 
@@ -30,14 +34,12 @@ AppRegistry.registerComponent = (appKey, component) => {
 
   return originRegister(appKey, function () {
     const OriginAppComponent = component();
-
     return class extends Component {
-
       render() {
         return (
           <View style={styles.container}>
             <OriginAppComponent/>
-            <RootView/>
+            <Root/>
           </View>
         );
       };
@@ -59,4 +61,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   }
 });
-export default RootView
+export default Root
