@@ -44,6 +44,7 @@ import {
   Paragraph,
   Label,
   Mask,
+  CommonWebView,
   EnhancedBackHandler,
   WithConnection
 } from './Components'
@@ -70,6 +71,7 @@ export {
   px2dp,
   hookTouch,
   hookUrl,
+  CommonWebView,
   EnhancedBackHandler,
   WithConnection
 }

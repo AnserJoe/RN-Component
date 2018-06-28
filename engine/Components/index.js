@@ -11,6 +11,7 @@ import NoData from './NoData/NoData'
 import LabelInput from './LabelInput/LabelInput'
 import RNPicker from './RNPicker/RNPicker'
 import WarpLoading from './WarpLoading/WarpLoading'
+import CommonWebView from './WebView/CommonWebView'
 import { Heading, Paragraph, Label } from './base/Text'
 import Mask from './base/Mask'
 
@@ -31,6 +32,7 @@ export {
   Paragraph,
   Label,
   Mask,
+  CommonWebView,
   EnhancedBackHandler,
   WithConnection
 }

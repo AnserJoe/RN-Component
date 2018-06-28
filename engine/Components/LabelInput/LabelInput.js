@@ -31,6 +31,7 @@ export default class LabelInput extends React.Component {
         <View style={[styles.inputView,
           hasTopLine ? {borderTopWidth: theme.borderWidth} : null,
           hasBottomLine ? {borderBottomWidth: theme.borderWidth} : null,
+          style
         ]}>
           <View style={styles.inputLogo1}>
             <Paragraph style={styles.inputTitle}>{title}</Paragraph>
@@ -38,7 +39,7 @@ export default class LabelInput extends React.Component {
               ref={ref => { this.ipt = ref }}
               underlineColorAndroid='transparent'
               {...this.getProps()}
-              style={[styles.input, style]}
+              style={styles.input}
             />
           </View>
           {this.props.children}
@@ -69,8 +70,6 @@ const styles = StyleSheet.create({
   inputLogo1: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
-    height: px2dp(80)
+    justifyContent: 'center'
   }
 })
-

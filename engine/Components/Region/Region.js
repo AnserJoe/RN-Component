@@ -19,6 +19,8 @@ let x = 0
  * cityCallback：选中回调
  * this.refs.xxx.show 显示组件
  * this.refs.xxx.hide 隐藏组件
+ * address: 自定义地区文档 object './../../Constants/theme'
+ * specialCity: 可忽略直辖市地区代码 array './../../Constants/static'.specialCity
  */
 export default class Region extends Component {
   constructor () {
@@ -37,6 +39,7 @@ export default class Region extends Component {
     this.allInfo = {}
     this.nowPage = 0
     this.sync = true
+    this.address = this.props.address || address
     this.state = {
       classA: [],
       classB: [],
@@ -58,7 +61,7 @@ export default class Region extends Component {
   }
   componentDidMount () {
     this.setState({
-      classA: this.setData(address.province)
+      classA: this.setData(this.address.province)
     })
   }
   componentWillUnmount () {
@@ -67,7 +70,7 @@ export default class Region extends Component {
   init () {
     this.previseClick(0)
     this.setState({
-      classA: this.setData(address.province),
+      classA: this.setData(this.address.province),
       classB: [],
       classC: [],
       title0: '请选择',
@@ -142,15 +145,15 @@ export default class Region extends Component {
       return
     }
     if (page === 0) {
-      if (address.city[item.code].length > 0) {
+      if (this.address.city[item.code].length > 0) {
         this.allInfo.province = item
         let data = []
-        if ((specialCity.indexOf(item.code) > -1) && level === 1) {
-          for (var z of address.city[item.code]) {
-            data = data.concat(address.district[z.code])
+        if (level === 1 && ((this.props.address ? (this.props.specialCity || []) : specialCity).indexOf(item.code) > -1)) {
+          for (var z of this.address.city[item.code]) {
+            data = data.concat(this.address.district[z.code])
           }
         } else {
-          data = address.city[item.code]
+          data = this.address.city[item.code]
         }
         this.setState({
           classB: this.setData(data),
@@ -160,10 +163,10 @@ export default class Region extends Component {
       }
     }
     if (page === 1) {
-      if (address.district[item.code].length > 0) {
+      if (this.address.district[item.code].length > 0) {
         this.allInfo.city = item
         this.setState({
-          classC: this.setData(address.district[item.code]),
+          classC: this.setData(this.address.district[item.code]),
           title2: '请选择'
         }, this.nextClick(item, page))
       }
