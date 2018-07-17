@@ -10,6 +10,7 @@ let theme = {
   themeColor: '#DA3762',
   hintColor: '#B44B4B',
   textColor: '#333',
+  textLightColor: '#666',
   displayColor: '#999',
   borderColor: '#DCDCDC',
   lightFont: '300',
