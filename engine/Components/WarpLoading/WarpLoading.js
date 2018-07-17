@@ -3,9 +3,9 @@
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { View, TouchableHighlight, ActivityIndicator, StyleSheet, CheckBox } from 'react-native'
+import { View, TouchableHighlight, ActivityIndicator, CheckBox } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import { Paragraph } from './../'
-import px2dp from './../../Util/px2dp'
 
 import theme from './../../Constants/theme'
 
@@ -23,8 +23,8 @@ export default class WarpLoading extends Component {
       <View style={styles.around}>
         <TouchableHighlight underlayColor={'rgba(225, 225, 225, 0.75)'}>
           <View style={styles.tip}>
-            <Paragraph style={{fontSize: theme.scaleSize(14), color: theme.textColor}}>服务异常</Paragraph>
-            <Paragraph style={{fontSize: theme.scaleSize(16), color: theme.textColor}}>点击刷新</Paragraph>
+            <Paragraph style={{fontSize: 14, color: theme.textColor}}>服务异常</Paragraph>
+            <Paragraph style={{fontSize: 16, color: theme.textColor}}>点击刷新</Paragraph>
           </View>
         </TouchableHighlight>
         <CheckBox style={{width: 200, height: 50}} value={this.state.AA} onChange={() => {
@@ -41,7 +41,7 @@ WarpLoading.propTypes = {
   title: PropTypes.string
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   around: {
     position: 'absolute',
     top: 0,
@@ -59,6 +59,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    paddingBottom: px2dp(20)
+    paddingBottom: 20
   }
 })

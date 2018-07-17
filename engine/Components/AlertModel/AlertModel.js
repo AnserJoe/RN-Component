@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import theme from './../../Constants/theme'
+import createStyle from './../../Service/createStyle'
 import { Paragraph, Touch } from './../'
 import Mask from './../base/Mask'
-import px2dp from './../../Util/px2dp'
 
 /**
  * 弹框
@@ -60,12 +60,12 @@ export default class AlertModel extends Component {
         touchHide={false}
       >
         <View style={styles.alertView}>
-          <View style={[styles.allView, {height: px2dp(height)}, isSimple ? {justifyContent: 'center'} : null]}>
+          <View style={[styles.allView, {height: height}, isSimple ? {justifyContent: 'center'} : null]}>
             {
               titleIsNull ? null : <View style={styles.titleView}>
                 <Paragraph
                   numberOfLines={2}
-                  style={[styles.title, !isSimple ? {marginTop: px2dp(20)} : null]}
+                  style={[styles.title, !isSimple ? {marginTop: 0} : null]}
                 >
                   {title}
                 </Paragraph>
@@ -75,7 +75,7 @@ export default class AlertModel extends Component {
               contentIsNull ? null : <View style={styles.innerView}>
                 <Paragraph
                   numberOfLines={4}
-                  style={[styles.inner, !isSimple ? {marginTop: px2dp(13)} : null]}
+                  style={[styles.inner, !isSimple ? {marginTop: 13} : null]}
                 >
                   {content}
                 </Paragraph>
@@ -113,42 +113,42 @@ export default class AlertModel extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   alertView: {
     position: 'absolute',
-    width: px2dp(290),
+    width: 290,
     flex: 1,
-    borderRadius: px2dp(6),
+    borderRadius: 6,
     backgroundColor: '#fff',
-    left: (theme.screenWidth - px2dp(290)) / 2,
-    bottom: px2dp(277)
+    left: (theme.screenWidth - 290) / 2,
+    bottom: 277
   },
   allView: {
-    borderTopLeftRadius: px2dp(6),
-    borderTopRightRadius: px2dp(6),
+    borderTopLeftRadius: 6,
+    borderTopRightRadius: 6,
     borderBottomWidth: theme.borderWidth,
     borderColor: '#E6E6E6',
     flexDirection: 'column',
     alignItems: 'center'
   },
   titleView: {
-    width: px2dp(230),
+    width: 230,
     justifyContent: 'center',
     alignItems: 'center'
   },
   title: {
-    fontSize: theme.scaleSize(18),
+    fontSize: 18,
     color: theme.textColor,
     fontWeight: theme.lightFont,
     textAlign: 'center'
   },
   innerView: {
-    width: px2dp(247),
+    width: 247,
     justifyContent: 'center',
     alignItems: 'center'
   },
   inner: {
-    fontSize: theme.scaleSize(15),
+    fontSize: 15,
     color: theme.displayColor,
     fontWeight: theme.lightFont,
     textAlign: 'center'
@@ -160,16 +160,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomLeftRadius: px2dp(6),
-    borderBottomRightRadius: px2dp(6),
-    height: px2dp(50)
+    borderBottomLeftRadius: 6,
+    borderBottomRightRadius: 6,
+    height: 50
   },
   btnText1: {
-    fontSize: theme.scaleSize(18),
+    fontSize: 18,
     color: theme.themeColor
   },
   btnText2: {
-    fontSize: theme.scaleSize(18),
+    fontSize: 18,
     color: theme.textColor
   }
 })

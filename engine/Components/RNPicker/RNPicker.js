@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, Animated, Easing, Dimensions, Picker, Platform, TouchableWithoutFeedback, Keyboard, Modal } from 'react-native'
+import { View, Animated, Easing, Dimensions, Picker, Platform, TouchableWithoutFeedback, Keyboard, Modal, ActivityIndicator } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import { Paragraph } from './../../Components'
-import px2dp from './../../Util/px2dp'
 import theme from './../../Constants/theme'
 import PickerAndroid from './PickerAndroid'
 
 const {width} = Dimensions.get('window')
-const aHeight = px2dp(250)
+const aHeight = 250
 let CommonPicker = Platform.OS === 'ios' ? Picker : PickerAndroid
 
 export default class RNPicker extends Component {
@@ -175,7 +175,7 @@ export default class RNPicker extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   container: {
     position: 'absolute',
     width: width,
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FAF9F8'
   },
   tipTitleView: {
-    height: px2dp(50),
+    height: 50,
     width: width,
     flexDirection: 'row',
     alignItems: 'center',
@@ -212,13 +212,13 @@ const styles = StyleSheet.create({
   },
   cancelText: {
     color: '#999999',
-    fontSize: theme.scaleSize(15),
-    paddingLeft: px2dp(20)
+    fontSize: 15,
+    paddingLeft: 20
   },
   okText: {
     color: theme.themeColor,
-    fontSize: theme.scaleSize(15),
-    paddingRight: px2dp(20)
+    fontSize: 15,
+    paddingRight: 20
   },
   tipPickerView: {
     flex: 1,
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
   },
   itempicker: {
     color: '#303030',
-    fontSize: theme.scaleSize(22),
+    fontSize: 22,
     width: width * 0.8,
     textAlign: 'center',
     textAlignVertical: 'center',
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     top: (theme.screenHeight / 3)
   },
   text: {
-    fontSize: theme.scaleSize(14),
+    fontSize: 14,
     color: theme.displayColor
   }
 })

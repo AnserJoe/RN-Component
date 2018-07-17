@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, Dimensions, PanResponder } from 'react-native'
-import px2dp from './../../Util/px2dp'
+import { View, Dimensions, PanResponder } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import theme from './../../Constants/theme'
 import { Paragraph } from './../../Components'
 
@@ -80,17 +80,17 @@ export default class PickerAndroid extends Component {
     this.middleHeight = Math.abs(-index * 40 + dy)
     this.up && this.up.setNativeProps({
       style: {
-        marginTop: px2dp((3 - index) * 30 + dy * 0.75)
+        marginTop: (3 - index) * 30 + dy * 0.75
       }
     })
     this.middle && this.middle.setNativeProps({
       style: {
-        marginTop: px2dp(-index * 40 + dy)
+        marginTop: -index * 40 + dy
       }
     })
     this.down && this.down.setNativeProps({
       style: {
-        marginTop: px2dp((-index - 1) * 30 + dy * 0.75)
+        marginTop: (-index - 1) * 30 + dy * 0.75
       }
     })
   }
@@ -142,7 +142,7 @@ export default class PickerAndroid extends Component {
     items.forEach((item, index) => {
       upItems[index] = <Paragraph
         key={'up' + index}
-        style={[styles.upText, this.state.itemStyle, {fontSize: theme.scaleSize(16)}]}
+        style={[styles.upText, this.state.itemStyle, {fontSize: 16}]}
         onPress={() => {
           this._moveTo(index)
         }}
@@ -157,7 +157,7 @@ export default class PickerAndroid extends Component {
 
       downItems[index] = <Paragraph
         key={'down' + index}
-        style={[styles.downText, this.state.itemStyle, {fontSize: theme.scaleSize(16)}]}
+        style={[styles.downText, this.state.itemStyle, {fontSize: 16}]}
         onPress={() => {
           this._moveTo(index)
         }}
@@ -181,15 +181,15 @@ export default class PickerAndroid extends Component {
     let items = this._renderItems(this.state.items)
 
     let upViewStyle = {
-      marginTop: px2dp((3 - index) * 30),
-      height: px2dp(length * 30)
+      marginTop: (3 - index) * 30,
+      height: length * 30
     }
     let middleViewStyle = {
-      marginTop: px2dp(-index * 40)
+      marginTop: -index * 40
     }
     let downViewStyle = {
-      marginTop: px2dp((-index - 1) * 30),
-      height: px2dp(length * 30)
+      marginTop: (-index - 1) * 30,
+      height: length * 30
     }
 
     return (
@@ -219,7 +219,7 @@ export default class PickerAndroid extends Component {
 
 let width = Dimensions.get('window').width
 
-let styles = StyleSheet.create({
+let styles = createStyle({
 
   container: {
     flex: 1,
@@ -227,7 +227,7 @@ let styles = StyleSheet.create({
     alignItems: 'center'
   },
   up: {
-    height: px2dp(90),
+    height: 90,
     overflow: 'hidden',
     backgroundColor: 'transparent'
   },
@@ -237,8 +237,8 @@ let styles = StyleSheet.create({
   },
   upText: {
     paddingTop: 0,
-    height: px2dp(30),
-    fontSize: theme.scaleSize(14),
+    height: 30,
+    fontSize: 14,
     color: '#000',
     opacity: 0.5,
     paddingBottom: 0,
@@ -246,27 +246,27 @@ let styles = StyleSheet.create({
     marginBottom: 0
   },
   middle: {
-    height: px2dp(40),
+    height: 40,
     width: width,
     overflow: 'hidden',
     backgroundColor: 'transparent'
   },
   middleView: {
-    height: px2dp(40),
+    height: 40,
     justifyContent: 'flex-start',
     alignItems: 'center'
   },
   middleText: {
     paddingTop: 0,
-    height: px2dp(40),
+    height: 40,
     color: '#000',
-    fontSize: theme.scaleSize(22),
+    fontSize: 22,
     paddingBottom: 0,
     marginTop: 0,
     marginBottom: 0
   },
   down: {
-    height: px2dp(90),
+    height: 90,
     overflow: 'hidden',
     backgroundColor: 'transparent'
   },
@@ -278,8 +278,8 @@ let styles = StyleSheet.create({
   },
   downText: {
     paddingTop: 0,
-    height: px2dp(30),
-    fontSize: theme.scaleSize(14),
+    height: 30,
+    fontSize: 14,
     color: '#000',
     opacity: 0.5,
     paddingBottom: 0,

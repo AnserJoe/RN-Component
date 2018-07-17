@@ -3,8 +3,8 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, View, WebView, TouchableHighlight, Image } from 'react-native'
-import px2dp from './../../Util/px2dp'
+import { SafeAreaView, WebView, TouchableHighlight, Image } from 'react-native'
+import createStyle from './../../Service/createStyle'
 
 export default class CommonWebView extends React.Component {
   constructor () {
@@ -84,7 +84,7 @@ export default class CommonWebView extends React.Component {
     let prop = {}
     if (isOnMessage) { prop.onMessage = this._onMessage }
     return (
-      <View style={styles.round}>
+      <SafeAreaView style={styles.round}>
         <WebView
           ref='webView'
           source={{uri: this._getUrl(), method: 'get'}}
@@ -97,37 +97,36 @@ export default class CommonWebView extends React.Component {
           scalesPageToFit
           onNavigationStateChange={this._onNavigationStateChange}
         />
-      </View>
+      </SafeAreaView>
     )
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   round: {
     flex: 1,
     backgroundColor: '#fff'
   },
   backView: {
     flex: 1,
-    paddingTop: px2dp(7),
-    paddingBottom: px2dp(7),
-    paddingLeft: px2dp(15),
-    paddingRight: px2dp(5)
+    paddingTop: 7,
+    paddingBottom: 7,
+    paddingLeft: 15,
+    paddingRight: 5
   },
   backImg: {
-    width: px2dp(20),
-    height: px2dp(20)
+    width: 20,
+    height: 20
   },
   xView: {
     flex: 1,
-    paddingTop: px2dp(7),
-    paddingBottom: px2dp(7),
-    paddingLeft: px2dp(15),
-    paddingRight: px2dp(5)
+    paddingTop: 7,
+    paddingBottom: 7,
+    paddingLeft: 5,
+    paddingRight: 5
   },
   xImg: {
-    width: px2dp(20),
-    height: px2dp(20)
+    width: 20,
+    height: 20
   }
 })
-

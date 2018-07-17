@@ -3,12 +3,11 @@
  */
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import { View, Text, TouchableOpacity, ScrollView, StyleSheet,
-  Image, Animated, Keyboard } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView, Image, Animated, Keyboard } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import Mask from './../base/Mask'
 import address from './../../Constants/address'
 import theme from './../../Constants/theme'
-import px2dp from './../../Util/px2dp'
 import {specialCity} from './../../Constants/static'
 
 let x = 0
@@ -323,15 +322,15 @@ class ItemsComponent extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   modalView: {
-    height: px2dp(370),
+    height: 370,
     justifyContent: 'flex-end'
   },
   modal: {
     flex: 1,
     position: 'absolute',
-    height: px2dp(370),
+    height: 370,
     width: theme.screenWidth,
     backgroundColor: '#fff',
     left: 0,
@@ -342,7 +341,7 @@ const styles = StyleSheet.create({
   },
   titleView: {
     flexDirection: 'row',
-    height: px2dp(52)
+    height: 52
   },
   title1View: {
     flex: 1,
@@ -350,14 +349,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   title1: {
-    fontSize: theme.scaleSize(13),
+    fontSize: 13,
     color: '#999',
-    marginTop: px2dp(10)
+    marginTop: 10
   },
   X: {
-    width: px2dp(12),
-    height: px2dp(12),
-    margin: px2dp(20)
+    width: 12,
+    height: 12,
+    margin: 20
   },
   nameView: {
     width: theme.screenWidth,
@@ -367,18 +366,18 @@ const styles = StyleSheet.create({
     borderColor: theme.borderColor
   },
   nameTouch: {
-    marginLeft: px2dp(20),
-    paddingBottom: px2dp(2),
+    marginLeft: 20,
+    paddingBottom: 2,
     borderColor: theme.hintColor
   },
   name: {
-    fontSize: theme.scaleSize(15),
+    fontSize: 15,
     color: theme.textColor
   },
   listView: {
     flex: 1,
     flexDirection: 'row',
-    paddingTop: px2dp(26)
+    paddingTop: 26
   },
   listContainer: {
     width: theme.screenWidth,
@@ -386,14 +385,14 @@ const styles = StyleSheet.create({
     flexDirection: 'column'
   },
   itemsTouch: {
-    height: px2dp(35),
+    height: 35,
     flexDirection: 'row',
-    paddingLeft: px2dp(20),
+    paddingLeft: 20,
     alignItems: 'center'
   },
   itemsText: {
-    fontSize: theme.scaleSize(13),
-    marginRight: px2dp(9)
+    fontSize: 13,
+    marginRight: 9
   },
   container: {
     position: 'absolute',

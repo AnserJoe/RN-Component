@@ -2,9 +2,9 @@
  * by Joe
  */
 import React from 'react'
-import { NetInfo, Platform, View, Image, StyleSheet } from 'react-native'
+import { NetInfo, Platform, View, Image } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import { Paragraph, Touch } from './../'
-import px2dp from './../../Util/px2dp'
 import theme from './../../Constants/theme'
 
 /**
@@ -64,7 +64,7 @@ const NetError = callback => {
         }}>
           <View style={styles.btn}>
             <Paragraph style={styles.text} >刷</Paragraph>
-            <Paragraph style={[styles.text, {marginLeft: px2dp(10)}]} >新</Paragraph>
+            <Paragraph style={[styles.text, {marginLeft: 10}]} >新</Paragraph>
           </View>
         </Touch>
       </View>
@@ -72,7 +72,7 @@ const NetError = callback => {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   contentView: {
     flex: 1,
     flexDirection: 'column',
@@ -81,19 +81,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   logo: {
-    width: px2dp(60),
-    height: px2dp(50),
-    marginTop: px2dp(106)
+    width: 60,
+    height: 50,
+    marginTop: 106
   },
   hint: {
-    fontSize: theme.scaleSize(13),
+    fontSize: 13,
     color: theme.displayColor,
-    marginTop: px2dp(31),
-    marginBottom: px2dp(70)
+    marginTop: 31,
+    marginBottom: 70
   },
   btn: {
-    width: px2dp(110),
-    height: px2dp(40),
+    width: 110,
+    height: 40,
     borderRadius: 4,
     borderColor: theme.textColor,
     borderWidth: theme.borderWidth,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontSize: theme.scaleSize(14),
+    fontSize: 14,
     color: theme.textColor
   },
   container: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   },
   tip: {
     position: 'absolute',
-    left: (theme.screenWidth - px2dp(290)) / 2,
+    left: (theme.screenWidth - 290) / 2,
     top: 160,
     width: theme.screenWidth
   }

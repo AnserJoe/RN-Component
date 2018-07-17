@@ -1,23 +1,12 @@
 import { Dimensions, PixelRatio } from 'react-native'
 
-export const deviceWidth = Dimensions.get('window').width // 设备的宽度
-export const deviceHeight = Dimensions.get('window').height   // 设备的高度
+export const { width, height } = Dimensions.get('window') // 设备的宽高
 
-const defaultPixel = 2                           // iphone6的像素密度
-// px转换成dp
-const w2 = 375 / defaultPixel
-const h2 = 667 / defaultPixel
-const scale = Math.min(deviceHeight / h2, deviceWidth / w2)   // 获取缩放比例
-
-export function scaleSize (size: number) {
-  size = Math.round(size * scale)
-  return Math.floor(size / defaultPixel)
-}
-
-export default {
-  screenWidth: deviceWidth,
-  screenHeight: deviceHeight,
+let theme = {
+  screenWidth: width,
+  screenHeight: height,
   onePixel: 1 / PixelRatio.get(),
+  borderWidth: 1,
   themeColor: '#DA3762',
   hintColor: '#B44B4B',
   textColor: '#333',
@@ -26,7 +15,11 @@ export default {
   lightFont: '300',
   regularFont: '400',
   mediumFont: '500',
-  fontFamily: 'Helvetica',
-  borderWidth: 1,
-  scaleSize: scaleSize
+  fontFamily: 'Helvetica'
 }
+
+export function setTheme (style) {
+  Object.assign(theme, style)
+}
+
+export default theme

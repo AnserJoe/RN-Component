@@ -4,7 +4,6 @@ import { ViewPropTypes, Animated, Keyboard, ActivityIndicator, View } from 'reac
 import { Paragraph } from './../index'
 import Modal from 'react-native-modal'
 import theme from './../../Constants/theme'
-import px2dp from './../../Util/px2dp'
 
 export default class LoadingView extends Component {
   constructor (props) {
@@ -30,10 +29,10 @@ export default class LoadingView extends Component {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: 'rgba(0, 0, 0 , 0.7)',
-          padding: px2dp(10),
-          paddingLeft: px2dp(20),
-          paddingRight: px2dp(20),
-          borderRadius: px2dp(8)
+          padding: 10,
+          paddingLeft: 20,
+          paddingRight: 20,
+          borderRadius: 8
 
         }}>
           <ActivityIndicator
@@ -42,9 +41,9 @@ export default class LoadingView extends Component {
             size={40}
           />
           <Paragraph style={{
-            fontSize: theme.scaleSize(16),
+            fontSize: 16,
             color: '#fff',
-            marginLeft: px2dp(15)
+            marginLeft: 15
           }}>
             Mohon tunggu...
           </Paragraph>

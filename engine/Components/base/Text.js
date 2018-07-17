@@ -1,7 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
+import { Text } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import theme from './../../Constants/theme'
-import px2dp from './../../Util/px2dp'
 
 export const Heading = ({style, ...props}) => {
   return <Text style={[styles.h, style]} {...props} />
@@ -27,21 +27,21 @@ Label.propTypes = {
   style: Text.propTypes.style
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   h: {
-    fontSize: theme.scaleSize(24),
+    fontSize: 24,
     color: theme.textColor,
     fontFamily: theme.fontFamily,
     fontWeight: theme.mediumFont
   },
   p: {
-    fontSize: theme.scaleSize(18),
+    fontSize: 18,
     color: theme.textColor,
     fontFamily: theme.fontFamily,
     fontWeight: theme.regularFont
   },
   l: {
-    fontSize: theme.scaleSize(12),
+    fontSize: 12,
     color: theme.textColor,
     fontFamily: theme.fontFamily,
     fontWeight: theme.lightFont

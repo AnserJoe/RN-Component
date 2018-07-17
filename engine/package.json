@@ -1,6 +1,6 @@
 {
   "name": "react-native-assist",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "description": "The common components and utils for react native, it works on iOS and Android.",
   "main": "index.js",

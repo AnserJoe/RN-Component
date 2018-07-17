@@ -2,14 +2,8 @@ import React, {
   Component,
 } from 'react';
 
-import {
-  StyleSheet,
-  View,
-  Easing,
-  Dimensions,
-  Text,
-  Animated
-} from 'react-native';
+import { View, Easing, Dimensions, Text, Animated } from 'react-native';
+import createStyle from './../../Service/createStyle'
 import PropTypes from 'prop-types';
 import Toast from "./index";
 import theme from "../../Constants/theme";
@@ -99,7 +93,7 @@ class ToastView extends Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   textContainer: {
     backgroundColor: 'rgba(0,0,0,.5)',
     borderRadius: 20,
@@ -111,7 +105,7 @@ const styles = StyleSheet.create({
   },
   defaultText: {
     color: "#FFF",
-    fontSize: theme.scaleSize(15),
+    fontSize: 15,
   },
   container: {
     position: "absolute",

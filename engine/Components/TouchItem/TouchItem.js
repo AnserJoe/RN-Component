@@ -3,9 +3,9 @@
  */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, StyleSheet, Image, TouchableWithoutFeedback, Text } from 'react-native'
+import { View, Image, TouchableWithoutFeedback, Text } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import { Heading, Label, Paragraph, Touch } from './../'
-import px2dp from './../../Util/px2dp'
 
 import theme from './../../Constants/theme'
 
@@ -93,7 +93,7 @@ TouchItem.propTypes = {
   height: PropTypes.number
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   topBorder: {
     borderTopWidth: theme.borderWidth,
     borderColor: theme.borderColor
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    height: px2dp(80)
+    height: 80
   },
   leftView: {
     flex: 1,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    fontSize: theme.scaleSize(20),
+    fontSize: 20,
     color: theme.textColor
   },
   hint: {
@@ -139,12 +139,12 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   status: {
-    fontSize: theme.scaleSize(15),
-    marginRight: px2dp(13)
+    fontSize: 15,
+    marginRight: 13
   },
   logo: {
-    width: px2dp(10),
-    height: px2dp(18)
+    width: 10,
+    height: 18
   }
 })
 

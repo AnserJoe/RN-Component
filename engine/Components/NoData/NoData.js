@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {View, StyleSheet, Image} from 'react-native'
-import px2dp from './../../Util/px2dp'
+import {View, Image} from 'react-native'
+import createStyle from './../../Service/createStyle'
 import theme from './../../Constants/theme'
 import { Paragraph } from './../'
 
@@ -15,18 +15,18 @@ NoData.propTypes = {
   title: PropTypes.string
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   around: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingTop: px2dp(60)
+    paddingTop: 60
   },
   text: {
-    fontSize: theme.scaleSize(13),
+    fontSize: 13,
     color: theme.displayColor,
-    marginTop: px2dp(25)
+    marginTop: 25
   }
 })
 

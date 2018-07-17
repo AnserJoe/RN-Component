@@ -16,7 +16,8 @@
 
 import React from 'react'
 import PropTypes from 'prop-types'
-import { SectionList, FlatList, ViewPropTypes, Text, View, StyleSheet, PanResponder } from 'react-native'
+import { SectionList, FlatList, ViewPropTypes, Text, View, PanResponder } from 'react-native'
+import createStyle from './../../Service/createStyle'
 
 export default class CommonList extends React.Component {
   constructor () {
@@ -53,7 +54,7 @@ CommonList.propTypes = {
   hasSection: PropTypes.bool
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   container: {
     flex: 1,
     justifyContent: 'center',

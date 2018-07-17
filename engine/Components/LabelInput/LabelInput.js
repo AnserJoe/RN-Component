@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StyleSheet, Text, TouchableWithoutFeedback, View, TextInput } from 'react-native'
+import { Text, TouchableWithoutFeedback, View, TextInput } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import theme from './../../Constants/theme'
-import px2dp from './../../Util/px2dp'
 import { Paragraph } from './../'
 
 export default class LabelInput extends React.Component {
@@ -49,22 +49,22 @@ export default class LabelInput extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   inputView: {
     flexDirection: 'row',
     borderColor: theme.borderColor,
     justifyContent: 'center',
-    height: px2dp(80)
+    height: 80
   },
   inputTitle: {
-    fontSize: theme.scaleSize(12),
+    fontSize: 12,
     color: '#666'
   },
   input: {
-    fontSize: theme.scaleSize(20),
+    fontSize: 20,
     padding: 0,
-    marginTop: px2dp(5),
-    width: px2dp(335),
+    marginTop: 5,
+    width: 335,
     color: theme.textColor
   },
   inputLogo1: {

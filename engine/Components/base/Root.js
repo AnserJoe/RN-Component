@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {StyleSheet, AppRegistry, View, Text} from 'react-native';
+import {AppRegistry, View, Text} from 'react-native';
+import createStyle from './../../Service/createStyle'
 
 var self = null;
 
@@ -46,7 +47,7 @@ AppRegistry.registerComponent = (appKey, component) => {
     };
   });
 };
-const styles = StyleSheet.create({
+const styles = createStyle({
   container: {
     flex: 1,
     position: 'relative',

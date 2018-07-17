@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, StyleSheet, TouchableHighlight, ViewPropTypes } from 'react-native'
+import { View, TouchableHighlight, ViewPropTypes } from 'react-native'
+import createStyle from './../../Service/createStyle'
 import { Paragraph, Touch } from './../'
-import px2dp from './../../Util/px2dp'
 import theme from './../../Constants/theme'
 
 /**
@@ -35,7 +35,7 @@ const LabelButton = props => {
   )
 }
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   touch: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     backgroundColor: theme.themeColor,
-    height: px2dp(40)
+    height: 40
   },
   text: {//
     justifyContent: 'center',
     alignItems: 'center',
     color: '#fff',
-    fontSize: theme.scaleSize(17)
+    fontSize: 17
   }
 })
 
